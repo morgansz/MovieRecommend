@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant User as U
+    participant Profile as P
+    participant Movie as M
+    participant Actor as A
+    participant Rating as R
+    participant Recommendation as Rec
+
+    U->>+M: search_movies(query)
+    M-->>-U: List<Movie>
+
+    U->>+M: rate_movie(movie, rating)
+    M-->>-U: Rating
+
+    U->>+M: favorite_movies
+    M-->>-U: List<Movie>
+
+    U->>+R: ratings
+    R-->>-U: List<Rating>
+
+    U->>+Rec: recommendations
+    Rec-->>-U: List<Recommendation>
